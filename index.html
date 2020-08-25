@@ -214,22 +214,46 @@
 						id="scroll-btn"><span>&lt;</span></button>
 				</body>
 				<script>
-		document.addEventListener('scroll', () => {
-			const scroll = document.documentElement.scrollTop || document.body.scrollTop
-			const headerContent = document.querySelector("#header-content")
-			const scrolBtn = document.querySelector("#scroll-btn")
-			
-			headerContent.classList.remove("sticky");
-			scrolBtn.classList.remove("active");
 
-			if (scroll > 100) {
-				headerContent.classList.add("sticky")
-				scrolBtn.classList.add("active")
-			}
-		})
+					const requestWorks = () => {
+						const options = {
+							method: 'GET',
+							headers: {
+								'access_token': '69864bfe57e7a39e8ab90107a3bd0f75eb82bc009249dbb504f0af6058bd540650d3316476e5597fa4daa282250826c569e8bddd22a20d43ec5b3a605e6bedb8gstI9JsMCW3Yr04o0P2JKJyJKSCCk1RUQBn6Ic7DEuVynLVoaLfXxEkoZe5PCAwC'
+							}
+						}
 
-		document.querySelector("#scroll-btn").addEventListener('click', () => {
-			window.scrollTo({ top: 0, behavior: 'smooth' })
-		})
-	</script>
+						fetch('https://www.wribeiiro.com/api/', options)
+						.then((response) => {
+							response.json().then((data) => {
+								console.log(data)
+							})
+						})
+						.catch((err) => { 
+							console.error('Failed retrieving information', err)
+						})
+					}
+
+					document.addEventListener('scroll', () => {
+						const scroll = document.documentElement.scrollTop || document.body.scrollTop
+						const headerContent = document.querySelector("#header-content")
+						const scrolBtn = document.querySelector("#scroll-btn")
+						
+						headerContent.classList.remove("sticky");
+						scrolBtn.classList.remove("active");
+
+						if (scroll > 100) {
+							headerContent.classList.add("sticky")
+							scrolBtn.classList.add("active")
+						}
+					})
+
+					document.querySelector("#scroll-btn").addEventListener('click', () => {
+						window.scrollTo({ top: 0, behavior: 'smooth' })
+					})
+
+					document.addEventListener("DOMContentLoaded", function(event) {
+						requestWorks()
+					})
+				</script>
 			</html>
