@@ -10,6 +10,10 @@
 	--backEnd: #00C86F;
 }
 
+html, body {
+	overflow-x: hidden;
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -96,12 +100,12 @@ header.sticky .nav-brand p {
 	margin-bottom: 3rem;
 }
 
-#section-about > div > .section-about-bg  p {
+#section-about > div > .section-about-bg p {
 	padding: 50px;
 	margin-top: 80px;
 }
 
-#section-about > div > .section-about-bg  {
+#section-about > div > .section-about-bg {
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -210,6 +214,20 @@ section.message-list {
 	margin-bottom: 70px !important;
 }
 
+/* tecnologies */
+.tecnologies-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+  
+.nes-container.tecnologie {
+	display: flex;
+	padding: 1rem 1.5rem;
+	width: 470px;
+	margin-bottom: 2rem;
+}
+
 /* projects */
 .projects-content {
   display: flex;
@@ -281,7 +299,31 @@ section.message-list {
 }
 
 @media screen and (max-width: 580px) {
-  #nescss > .container {
-    margin-top: 190px;
-  }
+	#nescss > .container {
+		margin-top: 190px;
+	}
+
+	.topic {
+		margin: 10px;
+		padding: 10px;
+	}
+
+	#section-about > div > .section-about-bg  {
+		text-align: center;
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+  	#section-about > div > .section-about-bg  p {
+		padding: 20px;
+		margin-top: 135px;
+	}
+
+	.nav-brand > a {
+		font-size: 0.4rem;
+	}
+
+	header > .container > .nav-menu a {
+		font-size: 0.5rem;
+	}
 }
